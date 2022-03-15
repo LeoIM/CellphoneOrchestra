@@ -1,0 +1,71 @@
+html, body {
+  overflow-x: hidden;
+}
+
+body{
+    background-color: #333;
+    color: #fff;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+td{
+    font-family: Helvetica, Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+    font-size: 15vmin;
+    font-weight: bolder;
+    border: 2px solid;
+    border-color: #777;
+    overflow: hidden;
+}
+td:hover {
+    background-color: #a64;
+}
+svg {
+  width: 100%;
+}
+
+table{
+    align-self: center;
+    table-layout: fixed;
+}
+#drumpad{
+    border: 2px solid;
+    border-color: #777;
+    border-collapse: collapse;
+    text-align: center;
+
+    width: 100%;
+    height: 97%;
+}
+
+.meter { 
+  width: 100%;
+  height: 3%;
+  position: relative;
+  border: none;
+}
+#beatMeter {
+    
+    animation: timebarmovement 0.42857142857142856s infinite alternate;
+    /*
+    hardcoded right now to animate at 140 BPM
+    TODO: make this variable through the script
+    */
+    
+    display: block;
+    height: 100%;
+    border: 1px;
+    background-color: #777;
+    position: relative;
+    overflow: hidden;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-play-state: paused;
+}
+
+@keyframes timebarmovement {        
+  from { width: 0%; }
+  to { width: 100%; }
+}
