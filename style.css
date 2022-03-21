@@ -20,7 +20,11 @@ td{
     overflow: hidden;
 }
 td:hover {
+    background-color: #644;
+
+    /*
     background-color: #a64;
+    */
 }
 svg {
   width: 100%;
@@ -30,6 +34,7 @@ table{
     align-self: center;
     table-layout: fixed;
 }
+
 #drumpad{
     border: 2px solid;
     border-color: #777;
@@ -46,8 +51,22 @@ table{
   position: relative;
   border: none;
 }
+
+.clipClickable, { 
+    background-color: #556;
+
+}
+
+.clipPlaying, .clipClickable.clipPlaying { 
+    background-color: #779;
+}
+
+.stopButton {
+    background-color: #644;
+}
+
+
 #beatMeter {
-    
     animation: timebarmovement 0.42857142857142856s infinite alternate;
     /*
     hardcoded right now to animate at 140 BPM
