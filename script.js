@@ -42,25 +42,31 @@ function init(){
     });
 
     //randomly select a set of samples
-    clipSet = clipSets[Math.floor(Math.random()*clipSets.length)];
-    
+    clipSet = clipSets.slice(Math.floor(Math.random()*clipSets.length));
+
     //create the drumpads
     var drumpadRows = Math.ceil(Math.sqrt(clipSet.length+1));
     var drumpadColumns = Math.ceil((clipSet.length+1)/drumpadRows);
-    
-    const drumpad = document.getElementById('drumpad');
-    
+
+    createpad(drumpadRows, drumpadColumns);
+
+    var myClip;
+
+
+}
+
+function createpad(drumpadRows, drumpadColumns) {
     var currRow;
     var currCell;
-    
+    var stopbtn;
+
+    var isPlaying = false;
+
+    var playingArray = []
+
     var row,col,cell = 0;
-    
-    for (row = 0; row < drumpadRows; row++) {
-        currRow = drumpad.insertRow();
-        for (col = 0; col < drumpadColumns; col++) {
-            if (true){
-            currCell = currRow.insertCell();
-            /*  TODO: fill these cells with content! 
+
+                /*  TODO: fill these cells with content! 
             
                 There should be a cell for each audio sample in the clipSet,
                 which onClick() should call 
@@ -74,40 +80,87 @@ function init(){
                 should be assigned to cells as appropriate.
                 
             */
-            
+    
+    for (row = 0; row < drumpadRows; row++) {
+        currRow = drumpad.insertRow();
+        for (col = 0; col < drumpadColumns; col++) {
+
+            if (cell == clipSet.length) {
+                    stopbtn = currRow.insertCell();
+                    stopbtn.innerHTML = "PAUSE" ;
+                    stopbtn.value = "STOP"
+                    stopbtn.style.cssText +=';background-color:#644;'
+                    drumpad.rows[row].cells[col].onclick = function () {
+                        var target = playingArray.pop();
+                        pauseAudio(target, isPlaying)
+                    }
             }
-            cell++;
+
+            else {
+                currCell = currRow.insertCell();
+                currCell.innerHTML = clipSet[cell][0].name
+                currCell.value = clipSet[cell][0].url
+                currCell.style.cssText +=';background-color: #556;'
+                drumpad.rows[row].cells[col].onclick = function () {
+                    if ((this.value != "STOP") && (!this.isPlaying)){
+                        playingArray.push(this.value)
+                        globalMetronome.executeAtBarLine(playLoop(this.value))
+                        this.isPlaying = true
+                        this.style.cssText +=';background-color: #779;'
+                    }
+                }
+
+            }
+            cell++;  
         }
+
     }
+
+
 }
 
-function playLoop(filepath){
     /* TODO: implement this! there are a bunch of ways to play audio in
     javascript, and even more edge cases that could throw things out of sync
     with each other, so this is a careful task.
     */
+
+    // need some fix
+function playLoop(filepath){
+    myClip = new Audio(filepath);
+    if (typeof myClip.loop == 'boolean')
+     {
+        myClip.loop = true;
+     }
+     else
+    {
+        myClip.addEventListener('ended', function() {
+           this.currentTime = 0;
+           this.play();
+       }, false);
+    }
+    myClip.play() 
 }
 
-//audio playback i wrote in class. kind of works, but has issues. use as a
-//jumping off point if you'd like, but def not in final code.
-/*
-function play(){
-    drumAudio = new Audio('drumTest.mp3');
-    if (typeof drumAudio.loop == 'boolean')
-    {
-        drumAudio.loop = true;
+
+function pauseAudio(target, isPlaying) {
+    myClip.pause()
+    myClip.style.cssText +=';background-color: #556;'
+    myClip.currentTime = 0;
+    isPlaying = false
+    const table = document.getElementById('drumpad');
+    for (var r = 0; r < table.rows.length; r++) {
+        for (var c = 0; c < table.rows[r].cells.length; c++) {
+            if (table.rows[r].cells[c].value == target) {
+                table.rows[r].cells[c].style.cssText +=';background-color: #556;'
+                table.rows[r].cells[c].isPlaying = false
+            }
+        }
     }
-    else
-    {
-        drumAudio.addEventListener('ended', function() {
-            this.currentTime = 0;
-            this.play();
-        }, false);
-    }
-    drumAudio.play();
-    //setInterval(function, milliseconds)
+
 }
-*/
+
+
+
 
 function clearTimedEvents(){
     for (x in timeouts){

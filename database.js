@@ -4,9 +4,12 @@
 
 const clipSets = [
     [
-        {name:'drumTestA', url:'samples/drumTest.mp3'}
+        {name:'TestA', url:'samples/drumTest.mp3'}
     ],
     [
-        {name:'drumTestB', url:'samples/drumTest.mp3'}
+        {name:'TestB', url:'samples/Have_a_cigar.mp3'}
+    ],
+    [
+        {name:'TestC', url:'samples/Wish_You_Were_Here.mp3'}
     ]
 ];
