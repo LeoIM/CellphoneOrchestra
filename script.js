@@ -7,6 +7,7 @@ var intervals = [];
 
 var clipSet;
 
+
 function Metronome(bpm){
     this.tempo = bpm;
     //assumes we are in 4/4
@@ -55,6 +56,8 @@ function init(){
 
 }
 
+
+
 function createpad(drumpadRows, drumpadColumns) {
     var currRow;
     var currCell;
@@ -87,22 +90,28 @@ function createpad(drumpadRows, drumpadColumns) {
 
             if (cell == clipSet.length) {
                     stopbtn = currRow.insertCell();
-                    stopbtn.innerHTML = "PAUSE" ;
+                    stopbtn.innerHTML = '<font size= 20px>' + "PAUSE" + '</font>';
                     stopbtn.value = "STOP"
                     stopbtn.style.cssText +=';background-color:#644;'
                     drumpad.rows[row].cells[col].onclick = function () {
-                        var target = playingArray.pop();
-                        pauseAudio(target, isPlaying)
+                        if (playingArray.length == 1) {
+                            var target = playingArray.pop();
+                            pauseAudio(target, isPlaying);
+                        }
                     }
             }
 
             else {
                 currCell = currRow.insertCell();
-                currCell.innerHTML = clipSet[cell][0].name
+                currCell.innerHTML = '<font size= 20px>'+ clipSet[cell][0].name + '</font>';
                 currCell.value = clipSet[cell][0].url
                 currCell.style.cssText +=';background-color: #556;'
                 drumpad.rows[row].cells[col].onclick = function () {
                     if ((this.value != "STOP") && (!this.isPlaying)){
+                        if (playingArray.length == 1) {
+                            var target = playingArray.pop();
+                            pauseAudio(target, isPlaying)
+                        }
                         playingArray.push(this.value)
                         globalMetronome.executeAtBarLine(playLoop(this.value))
                         this.isPlaying = true
