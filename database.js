@@ -7,7 +7,7 @@ const clipSets = [
         {name:'TestA', url:'samples/drumTest.mp3'}
     ],
     [
-        {name:'TestB', url:'samples/Have_a_cigar.mp3'}
+        {name:'TestB', url:'samples/Have_a_Cigar.mp3'}
     ],
     [
         {name:'TestC', url:'samples/Wish_You_Were_Here.mp3'}
