@@ -36,6 +36,29 @@ const clipSets = [
         {name:'APE_F', url:'samples/SOICHI/APE_F.wav'},
         {name:'APE_G', url:'samples/SOICHI/APE_G.wav'},
         {name:'APE_H', url:'samples/SOICHI/APE_H.wav'}
+    ],
+    [
+        {name:'BG_GUITAR', url:'samples/BADGIRLS/BG_GUITAR.wav'},
+        {name:'BG_PIANO', url:'samples/BADGIRLS/BG_PIANO.wav'},
+        {name:'BG_HORNS', url:'samples/BADGIRLS/BG_HORNS.wav'},
+        {name:'BG_CHORUS', url:'samples/BADGIRLS/BG_CHORUS.wav'},
+        {name:'BG_TOOTTOOT_VOX', url:'samples/BADGIRLS/BG_TOOTTOOT_VOX.wav'},
+        {name:'BG_TOOTTOOT_DRUMS', url:'samples/BADGIRLS/BG_TOOTTOOT_DRUMS.wav'},
+        {name:'BG_TOOTTOOT_GUITAR', url:'samples/BADGIRLS/BG_TOOTTOOT_GUITAR.wav'},
+        {name:'BG_TOOTTOOT_FULL', url:'samples/BADGIRLS/BG_TOOTTOOT_FULL.wav'}
+    ],
+    [
+        {name:'HA_VOX', url:'samples/HA/HA_VOX.wav'},
+        {name:'HA_DUB', url:'samples/HA/HA_DUB.wav'},
+        {name:'HA_SYNTH', url:'samples/HA/HA_SYNTH.wav'},
+        {name:'HA_FULL', url:'samples/HA/HA_FULL.wav'},
+    ],
+    [
+        {name:'ACID_KICK', url:'samples/ACID/ACID_KICK.wav'},
+        {name:'ACID_COWBELL', url:'samples/ACID/ACID_COWBELL.wav'},
+        {name:'ACID_BASS_A', url:'samples/ACID/ACID_BASS_A.wav'},
+        {name:'ACID_BASS_B', url:'samples/ACID/ACID_BASS_B.wav'},
+        {name:'ACID_BASS_C', url:'samples/ACID/ACID_BASS_C.wav'},
+        {name:'ACID_BASS_D', url:'samples/ACID/ACID_BASS_D.wav'},
     ]
-
 ];
