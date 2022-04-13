@@ -18,7 +18,7 @@ const clipSets = [
         {name:'GW_VERSE', url:'samples/CRYSTALWATERS/GW_VERSE.wav'},
         {name:'GW_JUSTLIKE', url:'samples/CRYSTALWATERS/GW_JUSTLIKE.wav'},
         {name:'GW_CHORUS', url:'samples/CRYSTALWATERS/GW_CHORUS.wav'},
-        {name:'GW_PIANO', url:'samples/CRYSTALWATERS/GW_PIANO.wav'},
+        {name:'GW_PIANO', url:'samples/CRYSTALWATERS/GW_PIANO.wav'}
     ],
     [
         {name:'BIPP_INTRO', url:'samples/BIPP/BIPP_INTRO.wav'},
@@ -51,7 +51,7 @@ const clipSets = [
         {name:'HA_VOX', url:'samples/HA/HA_VOX.wav'},
         {name:'HA_DUB', url:'samples/HA/HA_DUB.wav'},
         {name:'HA_SYNTH', url:'samples/HA/HA_SYNTH.wav'},
-        {name:'HA_FULL', url:'samples/HA/HA_FULL.wav'},
+        {name:'HA_FULL', url:'samples/HA/HA_FULL.wav'}
     ],
     [
         {name:'ACID_KICK', url:'samples/ACID/ACID_KICK.wav'},
@@ -59,6 +59,53 @@ const clipSets = [
         {name:'ACID_BASS_A', url:'samples/ACID/ACID_BASS_A.wav'},
         {name:'ACID_BASS_B', url:'samples/ACID/ACID_BASS_B.wav'},
         {name:'ACID_BASS_C', url:'samples/ACID/ACID_BASS_C.wav'},
-        {name:'ACID_BASS_D', url:'samples/ACID/ACID_BASS_D.wav'},
+        {name:'ACID_BASS_D', url:'samples/ACID/ACID_BASS_D.wav'}
+    ],
+    [
+        {name:'EVERYBODY_ORGAN', url:'samples/EVERYBODY/EVERYBODY_ORGAN.wav'},
+        {name:'EVERYBODY_BREAK', url:'samples/EVERYBODY/EVERYBODY_BREAK.wav'},
+        {name:'EVERYBODY_BASS', url:'samples/EVERYBODY/EVERYBODY_BASS.wav'},
+        {name:'EVERYBODY_HORN', url:'samples/EVERYBODY/EVERYBODY_HORN.wav'},
+        {name:'EVERYBODY_SOFREE', url:'samples/EVERYBODY/EVERYBODY_SOFREE.wav'},
+        {name:'EVERYBODY_CHORUS', url:'samples/EVERYBODY/EVERYBODY_CHORUS.wav'}
+    ],
+    [
+        {name:'TMWTG_BEAT', url:'samples/TMWTG/TMWTG_BEAT.wav'},
+        {name:'TMWTG_CHORUS', url:'samples/TMWTG/TMWTG_CHORUS.wav'},
+        {name:'TMWTG_GHOSTRIDE', url:'samples/TMWTG/TMWTG_GHOSTRIDE.wav'},
+        {name:'TMWTG_SCRAPE', url:'samples/TMWTG/TMWTG_SCRAPE.wav'},
+        {name:'TMWTG_STUNNASHADES', url:'samples/TMWTG/TMWTG_STUNNASHADES.wav'},
+        {name:'TMWTG_GASBRAKEDIP', url:'samples/TMWTG/TMWTG_GASBRAKEDIP.wav'},
+        {name:'TMWTG_SHAKETHEM', url:'samples/TMWTG/TMWTG_SHAKETHEM.wav'},
+        {name:'TMWTG_GRILL', url:'samples/TMWTG/TMWTG_GRILL.wav'},
+        {name:'TMWTG_THIZZFACE', url:'samples/TMWTG/TMWTG_THIZZFACE.wav'},
+        {name:'TMWTG_DOORSOPEN', url:'samples/TMWTG/TMWTG_DOORSOPEN.wav'},
+        {name:'TMWTG_WATCHEMSWANG', url:'samples/TMWTG/TMWTG_WATCHEMSWANG.wav'},
+        {name:'TMWTG_GOSTUPID', url:'samples/TMWTG/TMWTG_GOSTUPID.wav'}
+    ],
+    [
+        {name:'KYLIE_BASSLINE', url:'samples/CANTGETYOUOUT/KYLIE_BASSLINE.wav'},
+        {name:'KYLIE_LALALA', url:'samples/CANTGETYOUOUT/KYLIE_LALALA.wav'},
+        {name:'KYLIE_CHORUS', url:'samples/CANTGETYOUOUT/KYLIE_CHORUS.wav'}
+    ],
+    [
+        {name:'IWANNAROCK_BREAK_A', url:'samples/IWANNAROCK/IWANNAROCK_BREAK_A.wav'},
+        {name:'IWANNAROCK_BREAK_B', url:'samples/IWANNAROCK/IWANNAROCK_BREAK_B.wav'},
+        {name:'IWANNAROCK_CHANT_A', url:'samples/IWANNAROCK/IWANNAROCK_CHANT_A.wav'},
+        {name:'IWANNAROCK_CHANT_B', url:'samples/IWANNAROCK/IWANNAROCK_CHANT_B.wav'}
+    ],
+    [
+        {name:'LADY_GUITAR', url:'samples/LADY/LADY_GUITAR.wav'},
+        {name:'LADY_DRUMS', url:'samples/LADY/LADY_DRUMS.wav'},
+        {name:'LADY_BASSLINE', url:'samples/LADY/LADY_BASSLINE.wav'},
+        {name:'LADY_CHORUS', url:'samples/LADY/LADY_CHORUS.wav'}
+    ],
+    [
+        {name:'BLUEMONDAY_KICK', url:'samples/BLUEMONDAY/BLUEMONDAY_KICK.wav'},
+        {name:'BLUEMONDAY_BASSLINE', url:'samples/BLUEMONDAY/BLUEMONDAY_BASSLINE.wav'},
+        {name:'BLUEMONDAY_SYNTHS', url:'samples/BLUEMONDAY/BLUEMONDAY_SYNTHS.wav'},
+        {name:'BLUEMONDAY_CHOIR', url:'samples/BLUEMONDAY/BLUEMONDAY_CHOIR.wav'},
+        {name:'BLUEMONDAY_PADS', url:'samples/BLUEMONDAY/BLUEMONDAY_PADS.wav'},
+        {name:'BLUEMONDAY_OUTRO', url:'samples/BLUEMONDAY/BLUEMONDAY_OUTRO.wav'},
     ]
 ];
