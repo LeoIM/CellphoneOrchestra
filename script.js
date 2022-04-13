@@ -64,8 +64,6 @@ function createpad(drumpadRows, drumpadColumns) {
 
     var isPlaying = false;
 
-    var playingArray = [];
-
     var row,col,cell = 0;
 
                 /*  TODO: fill these cells with content! 
@@ -92,9 +90,11 @@ function createpad(drumpadRows, drumpadColumns) {
                     stopbtn.value = "STOP";
                     stopbtn.style.cssText +=';background-color:#644;'
                     stopbtn.activate = function () {
-                        if (playingArray.length == 1) {
-                            var target = playingArray.pop();
-                            pauseAudio(target, target.isPlaying);
+                        if (players.length == 1) {
+                            var target = players.pop();
+                            target.player.stop();
+                            target.style.cssText +=';background-color: #556;'
+
                         }
                     }
                     drumpad.rows[row].cells[col].onmousedown = stopbtn.activate;
@@ -112,21 +112,19 @@ function createpad(drumpadRows, drumpadColumns) {
                 currCell.style.cssText +=';background-color: #556;';
                 currCell.player = "none";
                 currCell.activate = function () {
-                    
-                    if ((!this.isPlaying)){
                         if (!isAudioActivated) {
                             initAudio()
                         }
 
-                        if (playingArray.length == 1) {
-                            var target = playingArray.pop();
+                        if (players.length == 1) {
+                            var target = players.pop();
                             target.player.stop();
+                            target.style.cssText +=';background-color: #556;'
+
                         }
-                        playingArray.push(this);
+                        players.push(this);
                         globalMetronome.executeAtBarLine(this.player.cue());
-                        this.isPlaying = true;
                         this.style.cssText +=';background-color: #779;';
-                    }
                     
                 };
                 
