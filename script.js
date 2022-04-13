@@ -65,21 +65,6 @@ function createpad(drumpadRows, drumpadColumns) {
     var playingArray = [];
 
     var row,col,cell = 0;
-
-                /*  TODO: fill these cells with content! 
-            
-                There should be a cell for each audio sample in the clipSet,
-                which onClick() should call 
-                globalMetronome.executeAtBarLine(playLoop(___)) for the 
-                associated clip. Within the cell, there should be a text element
-                displaying the name value associated with the audio clip (not
-                the filepath of the mp3, but the "name" field of the object
-                within clipSet). There should also be a cell after these which
-                will stop audio when clicked. I set up a number of CSS classes,
-                ".clipClickable", ".clipPlaying", and ".stopButton", these
-                should be assigned to cells as appropriate.
-                
-            */
     
     for (row = 0; row < drumpadRows; row++) {
         currRow = drumpad.insertRow();
@@ -103,16 +88,19 @@ function createpad(drumpadRows, drumpadColumns) {
                 currCell.value = clipSet[cell].url;
                 currCell.style.cssText +=';background-color: #556;';
                 currCell.style.cssText +=';background-color: #556;';
-                currCell.clip = new Audio(currCell.value);
                 
                 drumpad.rows[row].cells[col].onmousedown = function () {
+                    if (!this.clip){
+                        this.clip = new Gapless5({ tracks:currCell.value, loop:true, singleMode:true, exclusive:true});
+                    }
                     if ((!this.isPlaying)){
                         if (playingArray.length == 1) {
                             var target = playingArray.pop();
                             pauseAudio(target, isPlaying);
                         }
                         playingArray.push(this.value);
-                        globalMetronome.executeAtBarLine(playLoop(this.value));
+                        //globalMetronome.executeAtBarLine(playLoop(this.value));
+                        globalMetronome.executeAtBarLine(this.clip.cue());
                         this.isPlaying = true;
                         this.style.cssText +=';background-color: #779;';
                     }
