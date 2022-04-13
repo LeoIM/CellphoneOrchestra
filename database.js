@@ -4,13 +4,13 @@
 
 const clipSets = [
     [
-        {name:'OG_DRUMS', url:'samples/BRIGHTERDAYS/BD_OG_DRUMS.mp3'},
-        {name:'OG_HEALIT', url:'samples/BRIGHTERDAYS/BD_OG_HEALIT.mp3'},
-        {name:'OG_LIFTMEUP', url:'samples/BRIGHTERDAYS/BD_OG_LIFTMEUP.mp3'},
-        {name:'OG_OOHOHAHEE', url:'samples/BRIGHTERDAYS/BD_OG_OOHOHAHEE.mp3'},
-        {name:'RASHAD_INTRO', url:'samples/BRIGHTERDAYS/BD_RASHAD_INTRO.mp3'},
-        {name:'RASHAD_BREAK', url:'samples/BRIGHTERDAYS/BD_RASHAD_BREAK.mp3'},
-        {name:'RASHAD_HATS', url:'samples/BRIGHTERDAYS/BD_RASHAD_HATS.mp3'},
-        {name:'RASHAD_KEYS', url:'samples/BRIGHTERDAYS/BD_RASHAD_KEYS.mp3'}
+        {name:'OG_DRUMS', url:'samples/BRIGHTERDAYS/BD_OG_DRUMS.wav'},
+        {name:'OG_HEALIT', url:'samples/BRIGHTERDAYS/BD_OG_HEALIT.wav'},
+        {name:'OG_LIFTMEUP', url:'samples/BRIGHTERDAYS/BD_OG_LIFTMEUP.wav'},
+        {name:'OG_OOHOHAHEE', url:'samples/BRIGHTERDAYS/BD_OG_OOHOHAHEE.wav'},
+        {name:'RASHAD_INTRO', url:'samples/BRIGHTERDAYS/BD_RASHAD_INTRO.wav'},
+        {name:'RASHAD_BREAK', url:'samples/BRIGHTERDAYS/BD_RASHAD_BREAK.wav'},
+        {name:'RASHAD_HATS', url:'samples/BRIGHTERDAYS/BD_RASHAD_HATS.wav'},
+        {name:'RASHAD_KEYS', url:'samples/BRIGHTERDAYS/BD_RASHAD_KEYS.wav'}
     ]
 ];

@@ -62,7 +62,7 @@ function createpad(drumpadRows, drumpadColumns) {
 
     var isPlaying = false;
 
-    var playingArray = []
+    var playingArray = [];
 
     var row,col,cell = 0;
 
@@ -87,12 +87,12 @@ function createpad(drumpadRows, drumpadColumns) {
             if (cell == clipSet.length) {
                     stopbtn = currRow.insertCell();
                     stopbtn.innerHTML = '<font size= 20px>' + "PAUSE" + '</font>';
-                    stopbtn.value = "STOP"
+                    stopbtn.value = "STOP";
                     stopbtn.style.cssText +=';background-color:#644;'
-                    drumpad.rows[row].cells[col].onclick = function () {
+                    drumpad.rows[row].cells[col].onmousedown = function () {
                         if (playingArray.length == 1) {
                             var target = playingArray.pop();
-                            pauseAudio(target, isPlaying);
+                            pauseAudio(target, target.isPlaying);
                         }
                     }
             }
@@ -100,18 +100,21 @@ function createpad(drumpadRows, drumpadColumns) {
             else {
                 currCell = currRow.insertCell();
                 currCell.innerHTML = '<font size= 20px>'+ clipSet[cell].name + '</font>';
-                currCell.value = clipSet[cell].url
-                currCell.style.cssText +=';background-color: #556;'
-                drumpad.rows[row].cells[col].onclick = function () {
-                    if ((this.value != "STOP") && (!this.isPlaying)){
+                currCell.value = clipSet[cell].url;
+                currCell.style.cssText +=';background-color: #556;';
+                currCell.style.cssText +=';background-color: #556;';
+                currCell.clip = new Audio(currCell.value);
+                
+                drumpad.rows[row].cells[col].onmousedown = function () {
+                    if ((!this.isPlaying)){
                         if (playingArray.length == 1) {
                             var target = playingArray.pop();
-                            pauseAudio(target, isPlaying)
+                            pauseAudio(target, isPlaying);
                         }
-                        playingArray.push(this.value)
-                        globalMetronome.executeAtBarLine(playLoop(this.value))
-                        this.isPlaying = true
-                        this.style.cssText +=';background-color: #779;'
+                        playingArray.push(this.value);
+                        globalMetronome.executeAtBarLine(playLoop(this.value));
+                        this.isPlaying = true;
+                        this.style.cssText +=';background-color: #779;';
                     }
                 }
 
@@ -132,17 +135,17 @@ function createpad(drumpadRows, drumpadColumns) {
     // need some fix
 function playLoop(filepath){
     myClip = new Audio(filepath);
-    if (typeof myClip.loop == 'boolean')
+     if (typeof myClip.loop == 'boolean')
      {
         myClip.loop = true;
-     }
-     else
-    {
-        myClip.addEventListener('ended', function() {
-           this.currentTime = 0;
-           this.play();
-       }, false);
     }
+    // else
+    //{
+    //    myClip.addEventListener('ended', function() {
+    //       this.currentTime = 0;
+    //       this.play();
+    //   }, false);
+    //}
     myClip.play() 
 }
 
@@ -150,7 +153,7 @@ function pauseAudio(target, isPlaying) {
     myClip.pause()
     myClip.style.cssText +=';background-color: #556;'
     myClip.currentTime = 0;
-    isPlaying = false
+    isPlaying = false;
     const table = document.getElementById('drumpad');
     for (var r = 0; r < table.rows.length; r++) {
         for (var c = 0; c < table.rows[r].cells.length; c++) {
