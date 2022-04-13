@@ -134,7 +134,8 @@ function createpad(drumpadRows, drumpadColumns) {
 
                         }
                         players.push(this);
-                        globalMetronome.executeAtBarLine(this.player.cue);
+                        this.player.cue();
+                        //globalMetronome.executeAtBarLine(this.player.cue);
                         this.style.cssText +=';background-color: #779;';
                     
                 };
