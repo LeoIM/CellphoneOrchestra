@@ -43,22 +43,19 @@ function init(){
     });
 
     //randomly select a set of samples
-    clipSet = clipSets.slice(Math.floor(Math.random()*clipSets.length));
+    clipSet = clipSets[(Math.floor(Math.random()*clipSets.length))];
 
     //create the drumpads
     var drumpadRows = Math.ceil(Math.sqrt(clipSet.length+1));
     var drumpadColumns = Math.ceil((clipSet.length+1)/drumpadRows);
 
     createpad(drumpadRows, drumpadColumns);
-
-    var myClip;
-
-
 }
 
-
-
 function createpad(drumpadRows, drumpadColumns) {
+    
+    console.log("creating pads with " + drumpadRows + " rows and " + drumpadColumns + " columns.");
+    
     var currRow;
     var currCell;
     var stopbtn;
@@ -87,7 +84,6 @@ function createpad(drumpadRows, drumpadColumns) {
     for (row = 0; row < drumpadRows; row++) {
         currRow = drumpad.insertRow();
         for (col = 0; col < drumpadColumns; col++) {
-
             if (cell == clipSet.length) {
                     stopbtn = currRow.insertCell();
                     stopbtn.innerHTML = '<font size= 20px>' + "PAUSE" + '</font>';
@@ -103,8 +99,8 @@ function createpad(drumpadRows, drumpadColumns) {
 
             else {
                 currCell = currRow.insertCell();
-                currCell.innerHTML = '<font size= 20px>'+ clipSet[cell][0].name + '</font>';
-                currCell.value = clipSet[cell][0].url
+                currCell.innerHTML = '<font size= 20px>'+ clipSet[cell].name + '</font>';
+                currCell.value = clipSet[cell].url
                 currCell.style.cssText +=';background-color: #556;'
                 drumpad.rows[row].cells[col].onclick = function () {
                     if ((this.value != "STOP") && (!this.isPlaying)){
@@ -150,7 +146,6 @@ function playLoop(filepath){
     myClip.play() 
 }
 
-
 function pauseAudio(target, isPlaying) {
     myClip.pause()
     myClip.style.cssText +=';background-color: #556;'
@@ -167,9 +162,6 @@ function pauseAudio(target, isPlaying) {
     }
 
 }
-
-
-
 
 function clearTimedEvents(){
     for (x in timeouts){
