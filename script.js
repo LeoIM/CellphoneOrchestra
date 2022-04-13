@@ -7,6 +7,8 @@ var intervals = [];
 
 var clipSet;
 
+var isAudioActivated = false;
+var players = [];
 
 function Metronome(bpm){
     this.tempo = bpm;
@@ -99,25 +101,33 @@ function createpad(drumpadRows, drumpadColumns) {
                     drumpad.rows[row].cells[col].ontouchstart = stopbtn.activate;
 
             }
-
+            else if (cell > clipSet.length){
+                currCell = currRow.insertCell();
+                currCell.style.cssText +=';background-color: #445;';
+            }
             else {
                 currCell = currRow.insertCell();
                 currCell.innerHTML = '<font size= 20px>'+ clipSet[cell].name + '</font>';
                 currCell.value = clipSet[cell].url;
                 currCell.style.cssText +=';background-color: #556;';
-                currCell.style.cssText +=';background-color: #556;';
-                currCell.clip = new Audio(currCell.value);
+                currCell.player = "none";
                 currCell.activate = function () {
+                    
                     if ((!this.isPlaying)){
+                        if (!isAudioActivated) {
+                            initAudio()
+                        }
+
                         if (playingArray.length == 1) {
                             var target = playingArray.pop();
-                            pauseAudio(target, isPlaying);
+                            target.player.stop();
                         }
-                        playingArray.push(this.value);
-                        globalMetronome.executeAtBarLine(playLoop(this.value));
+                        playingArray.push(this);
+                        globalMetronome.executeAtBarLine(this.player.cue());
                         this.isPlaying = true;
                         this.style.cssText +=';background-color: #779;';
                     }
+                    
                 };
                 
                 drumpad.rows[row].cells[col].onmousedown = currCell.activate;
@@ -132,27 +142,29 @@ function createpad(drumpadRows, drumpadColumns) {
 
 }
 
+function initAudio(){
+    const table = document.getElementById('drumpad');
+    for (var r = 0; r < table.rows.length; r++) {
+        for (var c = 0; c < table.rows[r].cells.length; c++) {
+            if (table.rows[r].cells[c].player == "none") {
+                table.rows[r].cells[c].player = new Gapless5({
+                    tracks:table.rows[r].cells[c].value,
+                    loop:true,
+                    singleMode:true,
+                    exclusive:true
+                });
+            }
+        }
+    }
+    isAudioActivated = true;
+}
+
     /* TODO: implement this! there are a bunch of ways to play audio in
     javascript, and even more edge cases that could throw things out of sync
     with each other, so this is a careful task.
     */
 
     // need some fix
-function playLoop(filepath){
-    myClip = new Audio(filepath);
-     if (typeof myClip.loop == 'boolean')
-     {
-        myClip.loop = true;
-    }
-    // else
-    //{
-    //    myClip.addEventListener('ended', function() {
-    //       this.currentTime = 0;
-    //       this.play();
-    //   }, false);
-    //}
-    myClip.play() 
-}
 
 function pauseAudio(target, isPlaying) {
     myClip.pause()
