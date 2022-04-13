@@ -89,12 +89,15 @@ function createpad(drumpadRows, drumpadColumns) {
                     stopbtn.innerHTML = '<font size= 20px>' + "PAUSE" + '</font>';
                     stopbtn.value = "STOP";
                     stopbtn.style.cssText +=';background-color:#644;'
-                    drumpad.rows[row].cells[col].onmousedown = function () {
+                    stopbtn.activate = function () {
                         if (playingArray.length == 1) {
                             var target = playingArray.pop();
                             pauseAudio(target, target.isPlaying);
                         }
                     }
+                    drumpad.rows[row].cells[col].onmousedown = stopbtn.activate;
+                    drumpad.rows[row].cells[col].ontouchstart = stopbtn.activate;
+
             }
 
             else {
@@ -104,8 +107,7 @@ function createpad(drumpadRows, drumpadColumns) {
                 currCell.style.cssText +=';background-color: #556;';
                 currCell.style.cssText +=';background-color: #556;';
                 currCell.clip = new Audio(currCell.value);
-                
-                drumpad.rows[row].cells[col].onmousedown = function () {
+                currCell.activate = function () {
                     if ((!this.isPlaying)){
                         if (playingArray.length == 1) {
                             var target = playingArray.pop();
@@ -116,7 +118,10 @@ function createpad(drumpadRows, drumpadColumns) {
                         this.isPlaying = true;
                         this.style.cssText +=';background-color: #779;';
                     }
-                }
+                };
+                
+                drumpad.rows[row].cells[col].onmousedown = currCell.activate;
+                drumpad.rows[row].cells[col].ontouchstart = currCell.activate;
 
             }
             cell++;  
