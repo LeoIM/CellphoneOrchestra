@@ -18,12 +18,12 @@ function Metronome(bpm){
     
     this.getTimeUntilBeatLine = function(){
         var d = new Date();
-        return (d.getTime()%this.beatLength);
+        return (floatSafeRemainder(d.getTime(),this.beatLength));
     };
 
     this.getTimeUntilBarLine = function(){
         var d = new Date();
-        return (d.getTime()%this.barLength);
+        return (floatSafeRemainder(d.getTime(),this.barLength));
     };
     
     this.executeAtBeatLine = function(f){
@@ -34,6 +34,17 @@ function Metronome(bpm){
         timeouts.push(setTimeout(f, this.getTimeUntilBarLine()));
     };
 }
+
+//https://stackoverflow.com/questions/3966484/why-does-modulus-operator-return-fractional-number-in-javascript
+function floatSafeRemainder(val, step){
+  var valDecCount = (val.toString().split('.')[1] || '').length;
+  var stepDecCount = (step.toString().split('.')[1] || '').length;
+  var decCount = valDecCount > stepDecCount? valDecCount : stepDecCount;
+  var valInt = parseInt(val.toFixed(decCount).replace('.',''));
+  var stepInt = parseInt(step.toFixed(decCount).replace('.',''));
+  return (valInt % stepInt) / Math.pow(10, decCount);
+}
+
 
 const globalMetronome = new Metronome(globalTempo);
 
