@@ -97,7 +97,7 @@ function createpad(drumpadRows, drumpadColumns) {
         for (col = 0; col < drumpadColumns; col++) {
             if (cell == clipSet.length) {
                     stopbtn = currRow.insertCell();
-                    stopbtn.innerHTML = '<font size= 20px>' + "PAUSE" + '</font>';
+                    stopbtn.innerHTML = "<p>PAUSE</p>";
                     stopbtn.value = "STOP";
                     stopbtn.style.cssText +=';background-color:#644;'
                     stopbtn.activate = function () {
@@ -118,7 +118,7 @@ function createpad(drumpadRows, drumpadColumns) {
             }
             else {
                 currCell = currRow.insertCell();
-                currCell.innerHTML = '<font size= 20px>'+ clipSet[cell].name + '</font>';
+                currCell.innerHTML = '<p>'+ clipSet[cell].name + '</p>';
                 currCell.value = clipSet[cell].url;
                 currCell.style.cssText +=';background-color: #556;';
                 currCell.player = "none";

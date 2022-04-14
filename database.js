@@ -107,5 +107,53 @@ const clipSets = [
         {name:'BLUEMONDAY_CHOIR', url:'samples/BLUEMONDAY/BLUEMONDAY_CHOIR.wav'},
         {name:'BLUEMONDAY_PADS', url:'samples/BLUEMONDAY/BLUEMONDAY_PADS.wav'},
         {name:'BLUEMONDAY_OUTRO', url:'samples/BLUEMONDAY/BLUEMONDAY_OUTRO.wav'},
+    ],
+    [
+        {name:'SYK_DRUM', url:'samples/SOUKNO/SYK_DRUM.wav'},
+        {name:'SYK_VOXSOLO', url:'samples/SOUKNO/SYK_VOXSOLO.wav'},
+        {name:'SYK_VOXDRUMS', url:'samples/SOUKNO/SYK_VOXDRUMS.wav'},
+        {name:'SYK_VOXBASS', url:'samples/SOUKNO/SYK_VOXBASS.wav'},
+        {name:'SYK_PADS', url:'samples/SOUKNO/SYK_PADS.wav'},
+    ],
+    [
+        {name:'INJECAO_INTRO', url:'samples/INJECAO/INJECAO_INTRO.wav'},
+        {name:'INJECAO_PRECHORUS', url:'samples/INJECAO/INJECAO_PRECHORUS.wav'},
+        {name:'INJECAO_CHORUS', url:'samples/INJECAO/INJECAO_CHORUS.wav'},
+        {name:'INJECAO_ROCKY_A', url:'samples/INJECAO/INJECAO_ROCKY_A.wav'},
+        {name:'INJECAO_ROCKY_B', url:'samples/INJECAO/INJECAO_ROCKY_B.wav'}
+    ],
+    [
+        {name:'GIVEIT_BASS', url:'samples/GIVEIT/GIVEIT_BASS.wav'},
+        {name:'GIVEIT_INST_A', url:'samples/GIVEIT/GIVEIT_INST_A.wav'},
+        {name:'GIVEIT_CHORUS', url:'samples/GIVEIT/GIVEIT_CHORUS.wav'},
+        {name:'GIVEIT_INST_B', url:'samples/GIVEIT/GIVEIT_INST_B.wav'},
+    ],
+    [
+        {name:'MJ_SCAT', url:'samples/MJ/MJ_SCAT.wav'},
+        {name:'MJ_INST_A', url:'samples/MJ/MJ_INST_A.wav'},
+        {name:'MJ_GUITAR', url:'samples/MJ/MJ_GUITAR.wav'},
+        {name:'MJ_CHORUS', url:'samples/MJ/MJ_CHORUS.wav'},
+        {name:'MJ_INST_B', url:'samples/MJ/MJ_INST_B.wav'},
+        {name:'MJ_BUILD', url:'samples/MJ/MJ_BUILD.wav'},
+        {name:'MJ_HORNS', url:'samples/MJ/MJ_HORNS.wav'},
+    ],
+    [
+        {name:'RPBOO_HATS', url:'samples/RPBOO/RPBOO_HATS.wav'},
+        {name:'RPBOO_KICKSNARE', url:'samples/RPBOO/RPBOO_KICKSNARE.wav'},
+        {name:'RPBOO_DRUMSFULL', url:'samples/RPBOO/RPBOO_DRUMSFULL.wav'},
+        {name:'RPBOO_VOX', url:'samples/RPBOO/RPBOO_VOX.wav'},
+        {name:'RPBOO_VOX_HATS', url:'samples/RPBOO/RPBOO_VOX_HATS.wav'},
+        {name:'RPBOO_FULL', url:'samples/RPBOO/RPBOO_FULL.wav'},
+        {name:'RPBOO_CHOPPED', url:'samples/RPBOO/RPBOO_CHOPPED.wav'},
+    ],
+    [
+        {name:'HYPNIC_BELLS', url:'samples/HYPNIC/HYPNIC_BELLS.wav'},
+        {name:'HYPNIC_BELLSOCTAVE', url:'samples/HYPNIC/HYPNIC_BELLSOCTAVE.wav'},
+        {name:'HYPNIC_HATS', url:'samples/HYPNIC/HYPNIC_HATS.wav'},
+        {name:'HYPNIC_SQUELCH_A', url:'samples/HYPNIC/HYPNIC_SQUELCH_A.wav'},
+        {name:'HYPNIC_SQUELCH_B', url:'samples/HYPNIC/HYPNIC_SQUELCH_B.wav'},
+        {name:'HYPNIC_BRUTAL_A', url:'samples/HYPNIC/HYPNIC_BRUTAL_A.wav'},
+        {name:'HYPNIC_BRUTAL_B', url:'samples/HYPNIC/HYPNIC_BRUTAL_B.wav'},
+        {name:'HYPNIC_BRUTAL_C', url:'samples/HYPNIC/HYPNIC_BRUTAL_C.wav'}
     ]
 ];

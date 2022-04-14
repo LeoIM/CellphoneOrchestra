@@ -13,11 +13,12 @@ td{
     font-family: Helvetica, Arial, sans-serif;
     color: #fff;
     text-align: center;
-    font-size: 15vmin;
+    font-size: 4vmin;
     font-weight: bolder;
     border: 2px solid;
     border-color: #777;
     overflow: hidden;
+
 }
 td:hover {
     background-color: #644;
